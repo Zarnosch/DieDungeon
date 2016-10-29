@@ -1,10 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerJumpBehaviour : MonoBehaviour {
 
 	// public
 	public float jumpForce = 400.0f;
+
+	public bool Grounded {
+		get { return grounded; }
+	}
 
 	// private
 	private bool grounded = false;
