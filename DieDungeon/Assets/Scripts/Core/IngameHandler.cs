@@ -11,4 +11,11 @@ public class IngameHandler
         
     }
 
+	public void PushInceptState() {
+		ActiveTimeLayer++;
+		if (ActiveTimeLayer > TimeLayer.Third) {
+			ActiveTimeLayer = TimeLayer.Third;
+		}
+	}
+
 }
