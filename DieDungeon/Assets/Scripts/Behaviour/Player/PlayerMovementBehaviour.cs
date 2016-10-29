@@ -38,6 +38,7 @@ public class PlayerMovementBehaviour : MonoBehaviour {
 		velocity = pj.Grounded ? velocity : velocity * percentWhennInAir;
 
 		velocity = Mathf.Clamp(velocity, minVelocity, maxVelocity);
+        
 
 		rb.velocity = new Vector2(velocity * input, rb.velocity.y);
 

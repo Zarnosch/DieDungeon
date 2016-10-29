@@ -34,7 +34,7 @@ public class PlayerJumpBehaviour : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D coll) {
 		
-		if (coll.gameObject.tag == "Ground") {
+		if (coll.gameObject.tag == "Ground" || coll.gameObject.tag == "Enemy") {
 			grounded = true;
 		}
 	}
