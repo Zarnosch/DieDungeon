@@ -16,9 +16,23 @@ public class PlayerBehaviour : MonoBehaviour {
 	private Vector2 spawnPos = new Vector2(0, 0);
 	private PlayerData playerData;
 
+	private ActiveInTimeLayerBehaviour activeLayer;
+
 	void Awake() {
 		spawnPos = transform.position;
 		playerData = new PlayerData(spawnPos, TimeLayer.First);
+
+		activeLayer = GetComponent<ActiveInTimeLayerBehaviour>();
+	}
+
+	void Update() {
+		if (activeLayer.ActiveInTimeLayer == IngameHandlerBehaviour.Instance.Handler.ActiveTimeLayer) {
+			Debug.Log("8");
+			gameObject.layer = 8;
+		} else {
+			Debug.Log("1");
+			gameObject.layer = 0;
+		}
 	}
 
 }
