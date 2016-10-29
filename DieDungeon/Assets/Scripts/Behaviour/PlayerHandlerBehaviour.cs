@@ -12,10 +12,14 @@ public class PlayerHandlerBehaviour : SingletonBehaviour<PlayerHandlerBehaviour>
 	public PlayerBehaviour activePlayer;
 
 	// private
-	private List<PlayerBehaviour> players;
+	private Stack<PlayerBehaviour> players;
 
 	override public void AwakeSingleton() {
-		players = new List<PlayerBehaviour>();
+		players = new Stack<PlayerBehaviour>();
+
+		Vector3 spawner = GetComponentInChildren<SpawnPositionHelperBehaviour>().gameObject.transform.position;
+		Debug.Log(spawner);
+		spawnPosition = new Vector2(spawner.x, spawner.y);
 
 		PlayerHandlerBehaviour.Instance.CreatePlayer();
 	}
@@ -29,16 +33,19 @@ public class PlayerHandlerBehaviour : SingletonBehaviour<PlayerHandlerBehaviour>
 
 		player.GetComponent<ActiveInTimeLayerBehaviour>().ActiveInTimeLayer = IngameHandlerBehaviour.Instance.Handler.ActiveTimeLayer;
 
-		players.Add(player);
+		players.Push(player);
 
 		// set newly created player as active player
 		activePlayer = player;
 	}
 		
 	public void DestroyPlayer() {
-		players.RemoveAt(players.Count - 1);
+		PlayerBehaviour player = players.Pop();
 
-		activePlayer = players[players.Count - 1];
+		Destroy(player.gameObject);
+
+		activePlayer = players.Peek();
+
 	}
 
 }
