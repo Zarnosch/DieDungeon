@@ -11,26 +11,27 @@ public class PlayerData {
 	private Vector2 spawnPos;
 	private Vector2 pos;
 
+	private TimeLayer activeOnTimeLayer;
+
 	// public
 	public int MaxHalth {
 		get { return maxHealth; }
-		set { }
 	}
 
 	public int Health { 
 		get { return health; } 
-		set { }
 	}
 
 	public Vector2 Pos { 
 		get { return pos; }
-		set { } 
 	}
 
-	public PlayerData(Vector2 spawnPos) {
+	public PlayerData(Vector2 spawnPos, TimeLayer activeOnLayer) {
 		this.health = this.maxHealth;
 
 		this.spawnPos = spawnPos;
 		this.pos = this.spawnPos;
+
+		activeOnTimeLayer = activeOnLayer;
 	}
 }

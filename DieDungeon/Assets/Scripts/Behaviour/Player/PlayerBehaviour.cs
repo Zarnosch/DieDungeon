@@ -13,7 +13,7 @@ public class PlayerBehaviour : MonoBehaviour {
 
 	void Awake() {
 		spawnPos = transform.position;
-		player = new PlayerData(spawnPos);
+		player = new PlayerData(spawnPos, TimeLayer.First);
 	}
 
 }

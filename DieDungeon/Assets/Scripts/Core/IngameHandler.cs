@@ -10,7 +10,7 @@ public class IngameHandler
     {
         
     }
-
+		
 	public void PushInceptState() {
 		ActiveTimeLayer++;
 		if (ActiveTimeLayer > TimeLayer.Third) {
@@ -18,4 +18,12 @@ public class IngameHandler
 		}
 	}
 
+	public void PopInceptState() {
+		ActiveTimeLayer--;
+		if (ActiveTimeLayer < TimeLayer.First) {
+			ActiveTimeLayer = TimeLayer.First;
+		}
+
+		// TODO implemet handling for happened actions
+	}
 }
