@@ -41,12 +41,16 @@
 			sampler2D _MainTex;
 			float _Blending;
 
+			sampler _GlobalKeepColored;
+
 			fixed4 frag (v2f i) : SV_Target
 			{
 				fixed4 col = tex2D(_MainTex, i.uv);
+				fixed4 playerCol = tex2D(_GlobalKeepColored, i.uv);
+
 				// YCbCr color space, only use grey
 				fixed4 ycbcr = 0.299 * col.r + 0.587 * col.g + 0.144 * col.b;
-				col = lerp(col, ycbcr, _Blending);
+				col = lerp(lerp(col, ycbcr, _Blending), playerCol, playerCol.a);
 				return col;
 			}
 			ENDCG
