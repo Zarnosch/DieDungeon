@@ -30,7 +30,7 @@ GameObject:
   - 212: {fileID: 212000010239814846}
   - 61: {fileID: 61000010922191114}
   - 50: {fileID: 50000010041113500}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
