@@ -8,11 +8,16 @@ public class RangedWeaponSpawnBehaviour : MonoBehaviour {
     public float WeaponSpeed;
     public float FireRate;
     public bool AutoFire;
-    public bool PlayerShoot;
+    public Owner Owner;
     private float _fireCounter;
+    public TimeLayer ActiveInTimeLayer { get; private set; }
 
-	// Use this for initialization
-	void Start ()
+    void Awake()
+    {
+        ActiveInTimeLayer = GetComponent<ActiveInTimeLayerBehaviour>().ActiveInTimeLayer;
+    }
+    // Use this for initialization
+    void Start ()
     {
         _fireCounter = 0f;
 	}
@@ -20,29 +25,31 @@ public class RangedWeaponSpawnBehaviour : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        if (IngameHandlerBehaviour.Instance.Handler.ActiveTimeLayer != ActiveInTimeLayer && ActiveInTimeLayer != TimeLayer.All) { return; }
         _fireCounter += Time.deltaTime;
         if(_fireCounter >= FireRate)
         {
             _fireCounter = FireRate;
         }
-        if (AutoFire && _fireCounter >= FireRate)
+        if (AutoFire && _fireCounter >= FireRate && Owner == Owner.Enemie)
         {
-            Shoot(new Vector3(0, 1, 0));
+            Shoot(PlayerHandlerBehaviour.Instance.activePlayer.transform.position - transform.position, Owner.Enemie);
         }
-        else if (Input.GetButtonDown("Fire2") && _fireCounter >= FireRate && PlayerShoot)
+        else if (Input.GetButtonDown("Fire2") && _fireCounter >= FireRate && Owner == Owner.Player)
         {
             Vector3 mousepos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousepos.z = transform.position.z;
             Vector3 shootdirection = mousepos - transform.position;
-            Shoot(shootdirection);
+            Shoot(shootdirection, Owner);
         }
 	}
 
-    public void Shoot(Vector3 direc)
+    public void Shoot(Vector3 direc, Owner owner)
     {
         _fireCounter = 0f;
         GameObject temp = Instantiate(WeaponObject, gameObject.transform.position, Quaternion.identity) as GameObject;
         RangedWeaponBehaviour weaponBehaviour = temp.GetComponent<RangedWeaponBehaviour>();
+        weaponBehaviour.GetComponent<OwnedByBehaviour>().Owner = owner;
         weaponBehaviour.MovementDirection = direc;
         weaponBehaviour.MovementSpeed = WeaponSpeed;
 
