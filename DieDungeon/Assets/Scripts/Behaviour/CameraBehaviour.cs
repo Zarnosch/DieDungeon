@@ -30,6 +30,8 @@ public class CameraBehaviour : MonoBehaviour {
 
 	void Update() {
 
+		if (IngameHandlerBehaviour.Instance.Handler.ActiveTimeLayer != TimeLayer.First) { return; }
+
 		if (drawDebug) {
 			Debug.DrawLine (new Vector3 (cam.transform.position.x - border, transform.position.y + 2, transform.position.z),
 				new Vector3 (cam.transform.position.x - border, transform.position.y - 2, transform.position.z));
