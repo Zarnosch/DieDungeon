@@ -17,19 +17,23 @@ public class PlayerBehaviour : MonoBehaviour {
 	private PlayerData playerData;
 
 	private ActiveInTimeLayerBehaviour activeLayer;
+	private Rigidbody2D rb;
 
 	void Awake() {
 		spawnPos = transform.position;
 		playerData = new PlayerData(spawnPos, TimeLayer.First);
 
 		activeLayer = GetComponent<ActiveInTimeLayerBehaviour>();
+		rb = GetComponent<Rigidbody2D>();
 	}
 
 	void Update() {
 		if (activeLayer.ActiveInTimeLayer == IngameHandlerBehaviour.Instance.Handler.ActiveTimeLayer) {
 			gameObject.layer = 8; // Keep Colored
+			rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 		} else {
 			gameObject.layer = 0; // Default
+			rb.constraints = RigidbodyConstraints2D.FreezeAll;
 		}
 	}
 
