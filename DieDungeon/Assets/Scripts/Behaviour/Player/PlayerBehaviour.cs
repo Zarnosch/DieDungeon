@@ -1,19 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(PlayerInceptBehaviour))]
+[RequireComponent(typeof(PlayerMovementBehaviour))]
+[RequireComponent(typeof(PlayerJumpBehaviour))]
+[RequireComponent(typeof(ActiveInTimeLayerBehaviour))]
 public class PlayerBehaviour : MonoBehaviour {
-	
+
+	// public
+	public PlayerData PlayerData {
+		get { return playerData; }
+	}
+
 	// private
 	private Vector2 spawnPos = new Vector2(0, 0);
-	private PlayerData player;
-
-	public PlayerData Player {
-		get { return player; }
-	}
+	private PlayerData playerData;
 
 	void Awake() {
 		spawnPos = transform.position;
-		player = new PlayerData(spawnPos, TimeLayer.First);
+		playerData = new PlayerData(spawnPos, TimeLayer.First);
 	}
 
 }
