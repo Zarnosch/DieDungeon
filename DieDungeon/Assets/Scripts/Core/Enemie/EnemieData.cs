@@ -6,22 +6,24 @@ public class EnemieData
 {
 
     // insert enemieData here
-    public int FullHp;
+    public int fullHp;
     public int life { get; private set; }
 
     public void Start()
     {
-        life = FullHp;
+        life = fullHp;
     }
 
-    public bool TakeDamage(int dmg)
+
+    public bool TakeDamage(int dmg, HealthBar bar)
     {
         life -= dmg;
-        if(life <= 0)
-        {
-            Debug.Log("I am fucking dying you Sonofabtich");
-        }
+        Update(bar);
         return life >= 0;
     }
 
+    public void Update(HealthBar bar)
+    {
+        bar.SetPercent((float)life / (float)fullHp);
+    }
 }

@@ -8,39 +8,46 @@ public class RangedWeaponSpawnBehaviour : MonoBehaviour {
     public float WeaponSpeed;
     public float FireRate;
     public bool AutoFire;
+    public bool PlayerShoot;
+    private float _fireCounter;
 
 	// Use this for initialization
 	void Start ()
     {
-        if (AutoFire)
-        {
-            StartCoroutine(Shoot());
-        }
-
+        _fireCounter = 0f;
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        if (!AutoFire && Input.GetButtonDown("Fire2"))
+        _fireCounter += Time.deltaTime;
+        if(_fireCounter >= FireRate)
         {
-            Shoot();
+            _fireCounter = FireRate;
+        }
+        if (AutoFire && _fireCounter >= FireRate)
+        {
+            Shoot(new Vector3(0, 1, 0));
+        }
+        else if (Input.GetButtonDown("Fire2") && _fireCounter >= FireRate && PlayerShoot)
+        {
+            Vector3 mousepos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousepos.z = transform.position.z;
+            Vector3 shootdirection = mousepos - transform.position;
+            Shoot(shootdirection);
         }
 	}
 
-    public IEnumerator Shoot()
+    public void Shoot(Vector3 direc)
     {
-        yield return new WaitForSeconds(WeaponSpeed);
+        _fireCounter = 0f;
+        GameObject temp = Instantiate(WeaponObject, gameObject.transform.position, Quaternion.identity) as GameObject;
+        RangedWeaponBehaviour weaponBehaviour = temp.GetComponent<RangedWeaponBehaviour>();
+        weaponBehaviour.MovementDirection = direc;
+        weaponBehaviour.MovementSpeed = WeaponSpeed;
 
-        while (AutoFire)
-        {
-            GameObject temp = Instantiate(WeaponObject, transform) as GameObject;
-            RangedWeaponBehaviour weaponBehaviour = temp.GetComponent<RangedWeaponBehaviour>();
-            weaponBehaviour.MovementDirection = InitShootVector;
-            weaponBehaviour.MovementSpeed = WeaponSpeed;
-            yield return new WaitForSeconds(WeaponSpeed);            
-        }
     }
+
 
 
 }
