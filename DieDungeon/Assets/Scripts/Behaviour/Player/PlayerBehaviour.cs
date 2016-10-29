@@ -2,19 +2,17 @@
 using System.Collections;
 
 public class PlayerBehaviour : MonoBehaviour {
-
+	
 	// private
+	private Vector2 spawnPos = new Vector2(0, 0);
 	private PlayerData player;
-
-	// public
-	public Vector2 spawnPos = new Vector2(0, 0);
 
 	public PlayerData Player {
 		get { return player; }
-		set { }
 	}
 
 	void Awake() {
+		spawnPos = transform.position;
 		player = new PlayerData(spawnPos);
 	}
 
