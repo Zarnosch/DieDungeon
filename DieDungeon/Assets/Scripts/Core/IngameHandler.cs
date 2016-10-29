@@ -16,6 +16,8 @@ public class IngameHandler
 		if (ActiveTimeLayer > TimeLayer.Third) {
 			ActiveTimeLayer = TimeLayer.Third;
 		}
+
+		PlayerHandlerBehaviour.Instance.CreatePlayer();
 	}
 
 	public void PopInceptState() {
@@ -24,6 +26,6 @@ public class IngameHandler
 			ActiveTimeLayer = TimeLayer.First;
 		}
 
-		// TODO implemet handling for happened actions
+		// TODO blending of objects that changed
 	}
 }

@@ -3,13 +3,18 @@ using System.Collections;
 
 public class PlayerInceptBehaviour : MonoBehaviour {
 
-	void Start () {
-	
+	private ActiveInTimeLayerBehaviour ait;
+
+	void Awake() {
+		ait = GetComponent<ActiveInTimeLayerBehaviour>();
 	}
 
-	void Update () {
-		if (Input.GetButtonDown("Fire1")) {
+	void Update() {
+		if (IngameHandlerBehaviour.Instance.Handler.ActiveTimeLayer != ait.ActiveInTimeLayer) { return; }
+
+		if (IngameHandlerBehaviour.Instance.Handler.ActiveTimeLayer < TimeLayer.Third && Input.GetButtonDown("Fire1")) {
 			IngameHandlerBehaviour.Instance.Handler.PushInceptState();
 		}
 	}
+
 }
