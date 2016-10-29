@@ -16,7 +16,10 @@ public class IngameHandler
 		if (ActiveTimeLayer > TimeLayer.Third) {
 			ActiveTimeLayer = TimeLayer.Third;
 		}
-			
+		if (ActiveTimeLayer == TimeLayer.Second) {
+			Camera.main.GetComponent<InceptShaderScript>().StartTransition();	
+		}
+
 		PlayerHandlerBehaviour.Instance.CreatePlayer();
 	}
 
@@ -26,6 +29,11 @@ public class IngameHandler
 			ActiveTimeLayer = TimeLayer.First;
 		}
 
-		// TODO blending of objects that changed
+		if (ActiveTimeLayer == TimeLayer.First) {
+			Camera.main.GetComponent<InceptShaderScript>().StartTransition(-1);	
+		}
+
+		PlayerHandlerBehaviour.Instance.DestroyPlayer();
+		//TODO blending 
 	}
 }

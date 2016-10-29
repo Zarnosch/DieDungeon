@@ -26,6 +26,10 @@ public class PlayerData {
 		get { return pos; }
 	}
 
+	public TimeLayer ActiveOnLayer {
+		get { return activeOnTimeLayer; }
+	}
+
 	public PlayerData(Vector2 spawnPos, TimeLayer activeOnLayer) {
 		this.health = this.maxHealth;
 
