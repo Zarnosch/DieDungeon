@@ -18,17 +18,25 @@ public class PlayerMovementBehaviour : MonoBehaviour {
 	private PlayerJumpBehaviour pj;
 	private Rigidbody2D rb;
 	private ActiveInTimeLayerBehaviour ait;
+	private CameraBehaviour cb;
 
 	void Awake() {
 		pj = GetComponent<PlayerJumpBehaviour>();
 		rb = GetComponent<Rigidbody2D>();
 		ait = GetComponent<ActiveInTimeLayerBehaviour>();
+		cb = GetComponent<CameraBehaviour>();
 	}
 
 	void Update() {
 		if (IngameHandlerBehaviour.Instance.Handler.ActiveTimeLayer != ait.ActiveInTimeLayer) { return; }
 
 		float input = Input.GetAxisRaw("Horizontal");
+
+		if (input > 0) {
+			cb.viewDirection = CameraBehaviour.ViewDirection.LEFT;
+		} else if (input < 0){
+			cb.viewDirection = CameraBehaviour.ViewDirection.RIGHT;
+		}
 
 		if (input != 0) {
 			velocity += accelerationSpeed * Time.deltaTime;
