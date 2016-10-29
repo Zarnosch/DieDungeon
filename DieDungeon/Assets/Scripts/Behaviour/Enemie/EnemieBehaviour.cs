@@ -4,14 +4,19 @@ using System.Collections;
 
 public class EnemieBehaviour : MonoBehaviour
 {
-    EnemieData Data;
+    public EnemieData Data;
 
-    public void OnCollisionEnter2D(Collision2D coll)
+    public void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.gameObject.tag == "RangedWeapon")
+        if (coll.gameObject.GetComponent<RangedWeaponBehaviour>() != null && coll.gameObject.GetComponent<OwnedByBehaviour>().Owner != Owner.Enemie)
         {
-            Data.TakeDamage(coll.gameObject.GetComponent<RangedWeaponBehaviour>().Data.Damage);
+            if (!Data.TakeDamage(coll.gameObject.GetComponent<RangedWeaponBehaviour>().Data.Damage))
+                KillMySelf();
         }
     }
 
+    public void KillMySelf()
+    {
+        Destroy(gameObject);
+    }
 }
