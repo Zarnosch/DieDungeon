@@ -17,13 +17,16 @@ public class PlayerMovementBehaviour : MonoBehaviour {
 
 	private PlayerJumpBehaviour pj;
 	private Rigidbody2D rb;
+	private ActiveInTimeLayerBehaviour ait;
 
-	void Start () {
+	void Awake() {
 		pj = GetComponent<PlayerJumpBehaviour>();
 		rb = GetComponent<Rigidbody2D>();
+		ait = GetComponent<ActiveInTimeLayerBehaviour>();
 	}
 
-	void Update () {
+	void Update() {
+		if (IngameHandlerBehaviour.Instance.Handler.ActiveTimeLayer != ait.ActiveInTimeLayer) { return; }
 
 		float input = Input.GetAxisRaw("Horizontal");
 
