@@ -27,9 +27,11 @@ public class PlayerBehaviour : MonoBehaviour {
 
 	void Update() {
 		if (activeLayer.ActiveInTimeLayer == IngameHandlerBehaviour.Instance.Handler.ActiveTimeLayer) {
-			gameObject.layer = 8; // Keep Colored
+			Debug.Log("8");
+			gameObject.layer = 8;
 		} else {
-			gameObject.layer = 0; // Default
+			Debug.Log("1");
+			gameObject.layer = 0;
 		}
 	}
 
