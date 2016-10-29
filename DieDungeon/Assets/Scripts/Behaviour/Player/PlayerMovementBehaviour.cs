@@ -16,14 +16,16 @@ public class PlayerMovementBehaviour : MonoBehaviour {
 	private float velocity = 0.0f;
 
 	private PlayerJumpBehaviour pj;
+	private Rigidbody2D rb;
 
 	void Start () {
 		pj = GetComponent<PlayerJumpBehaviour>();
+		rb = GetComponent<Rigidbody2D>();
 	}
 
 	void Update () {
 
-		float input = Input.GetAxis("Horizontal");
+		float input = Input.GetAxisRaw("Horizontal");
 
 		if (input != 0) {
 			velocity += accelerationSpeed * Time.deltaTime;
@@ -34,6 +36,7 @@ public class PlayerMovementBehaviour : MonoBehaviour {
 
 		velocity = Mathf.Clamp(velocity, minVelocity, maxVelocity);
 
-		transform.Translate(velocity * input, 0, 0);
+		rb.velocity = new Vector2(velocity * input, rb.velocity.y);
+
 	}
 }
