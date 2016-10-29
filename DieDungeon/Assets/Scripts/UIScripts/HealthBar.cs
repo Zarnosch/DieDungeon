@@ -10,7 +10,7 @@ public class HealthBar : MonoBehaviour
 
     void Start()
     {
-        gameObject.SetActive(false);
+        gameObject.SetActive(true);
     }
 
     public void SetPercent(float p)
