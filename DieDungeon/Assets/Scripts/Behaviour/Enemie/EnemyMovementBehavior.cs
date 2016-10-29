@@ -11,7 +11,7 @@ public class EnemyMovementBehavior : MonoBehaviour {
     private float minVelocity = 0.0f;
     private float velocity = 0.0f;
 
-    public GameObject target;
+    public PlayerBehaviour target;
     private bool allowMovement = true;
 
     public TimeLayer ActiveTimeLayer { get; private set; }
@@ -21,7 +21,7 @@ public class EnemyMovementBehavior : MonoBehaviour {
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody2D>();
-        target = GameObject.FindGameObjectWithTag("Player");
+        target = PlayerHandlerBehaviour.Instance.activePlayer;
     }
 	
 	// Update is called once per frame
