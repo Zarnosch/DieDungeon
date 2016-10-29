@@ -17,13 +17,15 @@ public class RangedWeaponBehaviour : MonoBehaviour {
 
     void Start()
     {
-        float deg = 270 + Mathf.Rad2Deg * Mathf.Atan2(MovementDirection.y, MovementDirection.x);
-        transform.RotateAround(transform.position, new Vector3(0, 0, 1), deg);
+        
     }
 
     void Update()
     {
         if(IngameHandlerBehaviour.Instance.Handler.ActiveTimeLayer != ActiveInTimeLayer && ActiveInTimeLayer != TimeLayer.All) {return;}
+        float deg = 270 + Mathf.Rad2Deg * Mathf.Atan2(MovementDirection.y, MovementDirection.x);
+        transform.rotation = Quaternion.identity;
+        transform.RotateAround(transform.position, new Vector3(0, 0, 1), deg);
         transform.position += (MovementDirection.normalized * MovementSpeed * Time.deltaTime);
     }
 }
