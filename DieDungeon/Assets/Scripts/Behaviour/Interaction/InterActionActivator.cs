@@ -4,7 +4,9 @@ using System.Collections;
 public class InterActionActivator : MonoBehaviour {
 
     public GameObject DestinationObstacle;
+    public float Delay;
     private bool _triggered;
+    private bool _inRange;
 
 
     void Awake()
@@ -12,13 +14,22 @@ public class InterActionActivator : MonoBehaviour {
         _triggered = false;
     }
 
-    void OnTrigger2D(Collider2D collider)
+    void Update()
     {
-        if (Input.GetButtonDown("Fire3") && !_triggered)
+        if (_inRange && Input.GetButtonDown("Fire3") && !_triggered)
         {
-            DestinationObstacle.GetComponent<MoveObstacleInteraction>().Activate();
+            _triggered = true;
+            DestinationObstacle.GetComponent<MoveObstacleInteraction>().Activate(Delay, gameObject.transform.position);
         }
     }
 
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        _inRange = true;
+    }
 
+    void OnTriggerExit2D(Collider2D collider)
+    {
+        _inRange = false;
+    }
 }
