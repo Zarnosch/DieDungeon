@@ -13,6 +13,8 @@ public class PlayerInceptBehaviour : MonoBehaviour {
 		if (IngameHandlerBehaviour.Instance.Handler.ActiveTimeLayer != ait.ActiveInTimeLayer) { return; }
 
 		if (IngameHandlerBehaviour.Instance.Handler.ActiveTimeLayer < TimeLayer.Third && Input.GetButtonDown("Fire1")) {
+			PlayerHandlerBehaviour.Instance.spawnPosition = transform.position + Vector3.up;
+				
 			IngameHandlerBehaviour.Instance.Handler.PushInceptState();
 		}
 	}

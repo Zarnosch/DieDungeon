@@ -16,7 +16,7 @@ public class IngameHandler
 		if (ActiveTimeLayer > TimeLayer.Third) {
 			ActiveTimeLayer = TimeLayer.Third;
 		}
-
+			
 		PlayerHandlerBehaviour.Instance.CreatePlayer();
 	}
 
