@@ -12,9 +12,10 @@ public class EnemyMovementBehavior : MonoBehaviour {
     private float velocity = 0.0f;
 
     public GameObject target;
+    private bool allowMovement = true;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         target = GameObject.FindGameObjectWithTag("Player");
     }
 	
@@ -32,8 +33,19 @@ public class EnemyMovementBehavior : MonoBehaviour {
         }
         velocity = Mathf.Clamp(velocity, minVelocity, maxVelocity);
 
-        Debug.Log(velocity);
-
-        transform.Translate(move * velocity, 0, 0);
+        if (allowMovement)
+            transform.Translate(move * velocity, 0, 0);
 	}
+
+    void OnCollisionEnter2D(Collision2D coll)
+    {
+        if (coll.gameObject.tag == "Player")
+            allowMovement = false;
+    }
+
+    public void OnCollisionExit2D(Collision2D coll)
+    {
+        if (coll.gameObject.tag == "Player")
+            allowMovement = true;
+    }
 }
