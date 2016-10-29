@@ -17,6 +17,10 @@ public class PlayerHandlerBehaviour : SingletonBehaviour<PlayerHandlerBehaviour>
 	override public void AwakeSingleton() {
 		players = new Stack<PlayerBehaviour>();
 
+		Vector3 spawner = GetComponentInChildren<SpawnPositionHelperBehaviour>().gameObject.transform.position;
+		Debug.Log(spawner);
+		spawnPosition = new Vector2(spawner.x, spawner.y);
+
 		PlayerHandlerBehaviour.Instance.CreatePlayer();
 	}
 
