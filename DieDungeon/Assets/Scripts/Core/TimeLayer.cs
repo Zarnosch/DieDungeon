@@ -1,4 +1,4 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public enum TimeLayer{ First, Second, Third}
+public enum TimeLayer{ First, Second, Third, All}

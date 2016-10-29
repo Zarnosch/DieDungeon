@@ -22,7 +22,7 @@ public class HUDManager : MonoBehaviour {
         if (lives > 0)
         {
             lives--;
-            hearts[lives].color = new Color(0, 0, 0);
+            hearts[lives].color = new Color(20, 20, 20);
         }
     }
 }
