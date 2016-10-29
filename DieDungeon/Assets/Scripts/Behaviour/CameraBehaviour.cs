@@ -29,7 +29,6 @@ public class CameraBehaviour : MonoBehaviour {
 	}
 
 	void Update() {
-
 		if (IngameHandlerBehaviour.Instance.Handler.ActiveTimeLayer != TimeLayer.First) { return; }
 
 		if (drawDebug) {
