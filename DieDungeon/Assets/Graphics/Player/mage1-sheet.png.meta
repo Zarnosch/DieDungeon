@@ -1,9 +1,42 @@
 fileFormatVersion: 2
-guid: 378bf0aef08100d4a8ec4efe9cd4bcbc
-timeCreated: 1477822715
-licenseType: Free
+guid: 6b7515c521189408e9c32986b9b996b3
+timeCreated: 1477820010
+licenseType: Pro
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: mage_fight_1
+    21300002: mage_fight_2
+    21300004: mage_fight_3
+    21300006: mage_fight_4
+    21300008: mage_fight_5
+    21300010: mage_jump_1
+    21300012: mage_jump_2
+    21300014: mage_jump_3
+    21300016: mage_jump_4
+    21300018: mage_jump_5
+    21300020: mage_fall_1
+    21300022: mage_fall_2
+    21300024: mage_walk_1
+    21300026: mage_walk_2
+    21300028: mage_walk_3
+    21300030: mage_walk_4
+    21300032: mage_walk_5
+    21300034: mage_walk_6
+    21300036: mage_idlea_1
+    21300038: mage_idlea_2
+    21300040: mage_idlea_3
+    21300042: mage_idleb_1
+    21300044: mage_idleb_2
+    21300046: mage_run_1
+    21300048: mage_run_2
+    21300050: mage_run_3
+    21300052: mage_run_4
+    21300054: mage_run_5
+    21300056: mage_run_6
+    21300058: mage_run_7
+    21300060: mage_run_8
+    21300062: mage_run_9
+    21300064: mage_run_10
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -29,8 +62,8 @@ TextureImporter:
   textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
-    aniso: -1
+    filterMode: 0
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -38,20 +71,449 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 30
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: mage_fight_1
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 29
+        width: 45
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage_fight_2
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 29
+        width: 53
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage_fight_3
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 29
+        width: 54
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage_fight_4
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 29
+        width: 51
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage_fight_5
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 29
+        width: 47
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage_jump_1
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 28
+        width: 42
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage_jump_2
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 29
+        width: 40
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage_jump_3
+      rect:
+        serializedVersion: 2
+        x: 698
+        y: 29
+        width: 40
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage_jump_4
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 29
+        width: 43
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage_jump_5
+      rect:
+        serializedVersion: 2
+        x: 893
+        y: 29
+        width: 43
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage_fall_1
+      rect:
+        serializedVersion: 2
+        x: 985
+        y: 29
+        width: 41
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage_fall_2
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 29
+        width: 41
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage_walk_1
+      rect:
+        serializedVersion: 2
+        x: 1177
+        y: 29
+        width: 45
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage_walk_2
+      rect:
+        serializedVersion: 2
+        x: 1273
+        y: 29
+        width: 45
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage_walk_3
+      rect:
+        serializedVersion: 2
+        x: 1367
+        y: 28
+        width: 44
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage_walk_4
+      rect:
+        serializedVersion: 2
+        x: 1468
+        y: 29
+        width: 40
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage_walk_5
+      rect:
+        serializedVersion: 2
+        x: 1565
+        y: 29
+        width: 41
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage_walk_6
+      rect:
+        serializedVersion: 2
+        x: 1660
+        y: 29
+        width: 43
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage_idlea_1
+      rect:
+        serializedVersion: 2
+        x: 1756
+        y: 29
+        width: 43
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage_idlea_2
+      rect:
+        serializedVersion: 2
+        x: 1852
+        y: 29
+        width: 43
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage_idlea_3
+      rect:
+        serializedVersion: 2
+        x: 1948
+        y: 29
+        width: 43
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage_idleb_1
+      rect:
+        serializedVersion: 2
+        x: 2043
+        y: 29
+        width: 44
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage_idleb_2
+      rect:
+        serializedVersion: 2
+        x: 2142
+        y: 29
+        width: 41
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage_run_1
+      rect:
+        serializedVersion: 2
+        x: 2232
+        y: 29
+        width: 53
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage_run_2
+      rect:
+        serializedVersion: 2
+        x: 2330
+        y: 29
+        width: 51
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage_run_3
+      rect:
+        serializedVersion: 2
+        x: 2425
+        y: 29
+        width: 53
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage_run_4
+      rect:
+        serializedVersion: 2
+        x: 2523
+        y: 29
+        width: 53
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage_run_5
+      rect:
+        serializedVersion: 2
+        x: 2620
+        y: 29
+        width: 51
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage_run_6
+      rect:
+        serializedVersion: 2
+        x: 2715
+        y: 29
+        width: 54
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage_run_7
+      rect:
+        serializedVersion: 2
+        x: 2811
+        y: 29
+        width: 54
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage_run_8
+      rect:
+        serializedVersion: 2
+        x: 2907
+        y: 29
+        width: 52
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage_run_9
+      rect:
+        serializedVersion: 2
+        x: 3002
+        y: 29
+        width: 52
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage_run_10
+      rect:
+        serializedVersion: 2
+        x: 3097
+        y: 29
+        width: 52
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 
