@@ -10,12 +10,16 @@ public class InterActionActivator : MonoBehaviour {
     private bool _triggered;
     private bool _inRange;
 
+	private Animator anim;
+
 
     void Awake()
     {
         Renderer = GetComponentInChildren<SpriteRenderer>();
         ActiveTimeLayer = GetComponent<ActiveInTimeLayerBehaviour>().ActiveInTimeLayer;
         _triggered = false;
+
+		anim = GetComponentInChildren<Animator>();
     }
 
     void Update()
@@ -27,6 +31,7 @@ public class InterActionActivator : MonoBehaviour {
         {
             _triggered = true;
             DestinationObstacle.GetComponent<MoveObstacleInteraction>().Activate(Delay, gameObject.transform.position);
+			anim.SetTrigger("Activate");
         }
     }
 
