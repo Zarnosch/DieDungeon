@@ -49,7 +49,7 @@ public class RangedWeaponSpawnBehaviour : MonoBehaviour {
         }
 	}
 
-    public void Shoot(Vector3 direc, Owner owner)
+	public void Shoot(Vector3 direc, Owner owner, bool left = false)
     {
 
         if (!IsBad)
@@ -61,7 +61,13 @@ public class RangedWeaponSpawnBehaviour : MonoBehaviour {
             Debug.Log("Attack");
         }
         _fireCounter = 0f;
-        GameObject temp = Instantiate(WeaponObject, gameObject.transform.position + new Vector3(startPosX, startPosY, 0), Quaternion.identity) as GameObject;
+		GameObject temp;
+		if (left) {
+			temp = Instantiate(WeaponObject, gameObject.transform.position + new Vector3(-startPosX, startPosY, 0), Quaternion.identity) as GameObject;	
+		} else {
+			temp = Instantiate(WeaponObject, gameObject.transform.position + new Vector3(startPosX, startPosY, 0), Quaternion.identity) as GameObject;
+		}
+        
         RangedWeaponBehaviour weaponBehaviour = temp.GetComponent<RangedWeaponBehaviour>();
         weaponBehaviour.GetComponent<OwnedByBehaviour>().Owner = owner;
         weaponBehaviour.ActiveInTimeLayer = ActiveInTimeLayer;
