@@ -15,8 +15,10 @@ public class MoveObstacleInteraction : MonoBehaviour {
     private bool _timerTriggered;
     private BezierSpline _spline;
     private ParticleSystem _partSystem;
+    public TimeLayer ActiveTimeLayer { get; private set; }
+    public SpriteRenderer Renderer { get; private set; }
 
-	// Use this for initialization
+    // Use this for initialization
 
     void Awake()
     {
@@ -27,10 +29,15 @@ public class MoveObstacleInteraction : MonoBehaviour {
         _partSystem = GetComponentInChildren<ParticleSystem>();
         _partSystem.gameObject.SetActive(false);
         RigidbodyOfThisObstacle.constraints = RigidbodyConstraints2D.FreezeAll;
+        ActiveTimeLayer = GetComponent<ActiveInTimeLayerBehaviour>().ActiveInTimeLayer;
+        Renderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     void Update()
     {
+        Renderer.gameObject.layer = 0;
+        if (IngameHandlerBehaviour.Instance.Handler.ActiveTimeLayer != ActiveTimeLayer && ActiveTimeLayer != TimeLayer.All) return;
+        Renderer.gameObject.layer = 8;
         if (_timerTriggered)
         {
             if (CreateSpline)
@@ -47,13 +54,13 @@ public class MoveObstacleInteraction : MonoBehaviour {
         }
         if (_inRange && Input.GetButtonDown("Fire3") && !_triggered)
         {
-            Debug.Log("in");
             Activate();
         }
     }
 
     void OnTriggerEnter2D(Collider2D collider)
     {
+        if (IngameHandlerBehaviour.Instance.Handler.ActiveTimeLayer != ActiveTimeLayer && ActiveTimeLayer != TimeLayer.All) return;
         if (collider.tag == "Player")
         {
             _inRange = true;
@@ -62,6 +69,7 @@ public class MoveObstacleInteraction : MonoBehaviour {
 
     void OnTriggerExit2D(Collider2D collider)
     {
+        if (IngameHandlerBehaviour.Instance.Handler.ActiveTimeLayer != ActiveTimeLayer && ActiveTimeLayer != TimeLayer.All) return;
         if (collider.tag == "Player")
         {
             _inRange = false;

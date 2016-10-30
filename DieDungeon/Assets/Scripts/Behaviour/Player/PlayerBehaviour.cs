@@ -18,6 +18,7 @@ public class PlayerBehaviour : MonoBehaviour {
 
 	private ActiveInTimeLayerBehaviour activeLayer;
 	private Rigidbody2D rb;
+	private SpriteRenderer sr;
 
 	void Awake() {
 		spawnPos = transform.position;
@@ -25,9 +26,16 @@ public class PlayerBehaviour : MonoBehaviour {
 
 		activeLayer = GetComponent<ActiveInTimeLayerBehaviour>();
 		rb = GetComponent<Rigidbody2D>();
+		sr = GetComponent<SpriteRenderer>();
 	}
 
 	void Update() {
+		if (rb.velocity.x < 0) {
+			sr.flipX = true;
+		} else if (rb.velocity.x > 0){
+			sr.flipX = false;
+		}
+
 		if (activeLayer.ActiveInTimeLayer == IngameHandlerBehaviour.Instance.Handler.ActiveTimeLayer) {
 			gameObject.layer = 8; // Keep Colored
 			rb.constraints = RigidbodyConstraints2D.FreezeRotation;
@@ -39,9 +47,16 @@ public class PlayerBehaviour : MonoBehaviour {
 
     public void OnTriggerEnter2D(Collider2D coll)
     {
+
         RangedWeaponBehaviour weapon = coll.GetComponent<RangedWeaponBehaviour>();
         OwnedByBehaviour owner = coll.gameObject.GetComponent<OwnedByBehaviour>();
-        if (owner != null && weapon != null &&  owner.Owner != Owner.Player)
-            PlayerData.TakeHit(weapon.Data.Damage);
+        if (owner != null && weapon != null && owner.Owner != Owner.Player)
+        {
+            TimeLayer collisionTimeLayer = coll.GetComponent<ActiveInTimeLayerBehaviour>().ActiveInTimeLayer;
+            if (activeLayer.ActiveInTimeLayer == collisionTimeLayer || collisionTimeLayer == TimeLayer.All)
+            {
+                PlayerData.TakeHit(weapon.Data.Damage);
+            }
+        } 
     }
 }

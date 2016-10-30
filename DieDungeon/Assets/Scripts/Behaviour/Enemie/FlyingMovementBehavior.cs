@@ -20,6 +20,14 @@ public class FlyingMovementBehavior : MonoBehaviour {
     private Rigidbody2D rb;
     private float flightHelper;
 
+    public SpriteRenderer Renderer { get; private set; }
+
+    void Awake()
+    {
+        ActiveTimeLayer = GetComponent<ActiveInTimeLayerBehaviour>().ActiveInTimeLayer;
+        Renderer = GetComponent<SpriteRenderer>();
+    }
+
     // Use this for initialization
     void Start()
     {
@@ -32,7 +40,9 @@ public class FlyingMovementBehavior : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (GetComponent<ActiveInTimeLayerBehaviour>().ActiveInTimeLayer != IngameHandlerBehaviour.Instance.Handler.ActiveTimeLayer && GetComponent<ActiveInTimeLayerBehaviour>().ActiveInTimeLayer != TimeLayer.All) return;
+        Renderer.gameObject.layer = 0;
+        if (ActiveTimeLayer != IngameHandlerBehaviour.Instance.Handler.ActiveTimeLayer && ActiveTimeLayer != TimeLayer.All) return;
+        Renderer.gameObject.layer = 8;
 
         float moveX = target.transform.position.x - gameObject.transform.position.x;
 
@@ -65,12 +75,14 @@ public class FlyingMovementBehavior : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D coll)
     {
+        if (ActiveTimeLayer != IngameHandlerBehaviour.Instance.Handler.ActiveTimeLayer && ActiveTimeLayer != TimeLayer.All) return;
         if (coll.gameObject.tag == "Player")
             allowMovement = false;
     }
 
     public void OnCollisionExit2D(Collision2D coll)
     {
+        if (ActiveTimeLayer != IngameHandlerBehaviour.Instance.Handler.ActiveTimeLayer && ActiveTimeLayer != TimeLayer.All) return;
         if (coll.gameObject.tag == "Player")
             allowMovement = true;
     }

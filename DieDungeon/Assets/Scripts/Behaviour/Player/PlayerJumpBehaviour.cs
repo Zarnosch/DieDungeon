@@ -16,16 +16,19 @@ public class PlayerJumpBehaviour : MonoBehaviour {
 
 	private Rigidbody2D rb;
 	private ActiveInTimeLayerBehaviour ait;
+	private Animator playerAnimations;
 
 	void Awake() {
 		rb = GetComponent<Rigidbody2D>();
 		ait = GetComponent<ActiveInTimeLayerBehaviour>();
+		playerAnimations = GetComponent<Animator>();
 	}
 
 	void Update() {
 		if (IngameHandlerBehaviour.Instance.Handler.ActiveTimeLayer != ait.ActiveInTimeLayer) { return; }
 
 		if (grounded && Input.GetButtonDown("Jump")) {
+			playerAnimations.SetTrigger("Jump");
 			rb.AddForce(Vector2.up * jumpForce);
 			grounded = false;
 		}
