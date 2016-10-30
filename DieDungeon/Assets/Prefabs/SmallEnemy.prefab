@@ -367,6 +367,7 @@ MonoBehaviour:
   FireRate: 4
   AutoFire: 1
   Owner: 2
+  ShootRange: 4
   startPosX: 0
   startPosY: 0
 --- !u!114 &114000014215799870
