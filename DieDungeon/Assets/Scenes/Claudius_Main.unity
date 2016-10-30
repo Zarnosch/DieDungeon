@@ -132,6 +132,28 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5a8f2981563034043b42dd0d2de9a72c, type: 2}
   m_IsPrefabParent: 0
+--- !u!84 &444152600
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_Width: 1366
+  m_Height: 768
+  m_AntiAliasing: 1
+  m_DepthFormat: 1
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_TextureSettings:
+    m_FilterMode: 0
+    m_Aniso: 0
+    m_MipBias: 0
+    m_WrapMode: 1
 --- !u!1001 &450683660
 Prefab:
   m_ObjectHideFlags: 0
@@ -179,28 +201,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0f7558fc9b74dab40923b4e11d9ec4d2, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &559222375 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000013332931880, guid: 8ec81325d9c29464aaa7056a3d18b1cf,
-    type: 2}
-  m_PrefabInternal: {fileID: 1261606135}
---- !u!95 &559222376
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 559222375}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 43ce1eb0c0fd44c89939bbc8a410eb4f, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &610555405
 Prefab:
   m_ObjectHideFlags: 0
@@ -353,11 +353,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000013391085140, guid: 8ec81325d9c29464aaa7056a3d18b1cf, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 12.3164015
+      value: 17.32
       objectReference: {fileID: 0}
     - target: {fileID: 4000013391085140, guid: 8ec81325d9c29464aaa7056a3d18b1cf, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -9.678481
+      value: -5.51
       objectReference: {fileID: 0}
     - target: {fileID: 4000013391085140, guid: 8ec81325d9c29464aaa7056a3d18b1cf, type: 2}
       propertyPath: m_LocalPosition.z
@@ -386,15 +386,11 @@ Prefab:
     - target: {fileID: 224000010245813528, guid: 8ec81325d9c29464aaa7056a3d18b1cf,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0.56
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224000010245813528, guid: 8ec81325d9c29464aaa7056a3d18b1cf,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000013332931880, guid: 8ec81325d9c29464aaa7056a3d18b1cf, type: 2}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -442,28 +438,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0e46e9018e274ae4297626231e8b84d7, type: 2}
   m_IsPrefabParent: 0
---- !u!84 &1549386194
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_Width: 1366
-  m_Height: 768
-  m_AntiAliasing: 1
-  m_DepthFormat: 1
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_TextureSettings:
-    m_FilterMode: 0
-    m_Aniso: 0
-    m_MipBias: 0
-    m_WrapMode: 1
 --- !u!1001 &1965401965
 Prefab:
   m_ObjectHideFlags: 0
@@ -556,12 +530,12 @@ Prefab:
     - target: {fileID: 224000014259225062, guid: 5c579f3fda28b9e46b3dca6a9246b188,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0.56
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224000014259225062, guid: 5c579f3fda28b9e46b3dca6a9246b188,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5c579f3fda28b9e46b3dca6a9246b188, type: 2}

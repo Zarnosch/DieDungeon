@@ -32,6 +32,7 @@ public class InterActionActivator : MonoBehaviour {
             _triggered = true;
             DestinationObstacle.GetComponent<MoveObstacleInteraction>().Activate(Delay, gameObject.transform.position);
 			anim.SetTrigger("Activate");
+			IngameHandlerBehaviour.Instance.Handler.PopInceptState();
         }
     }
 
