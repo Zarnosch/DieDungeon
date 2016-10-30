@@ -108,6 +108,7 @@ GameObject:
   - 114: {fileID: 114000014215799870}
   - 114: {fileID: 114000010376020484}
   - 114: {fileID: 114000014185000474}
+  - 95: {fileID: 95000011858195434}
   m_Layer: 0
   m_Name: SmallEnemy
   m_TagString: Enemy
@@ -152,7 +153,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013332931880}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.793896, y: -5.3823566, z: -2}
+  m_LocalPosition: {x: 17.32, y: -5.51, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -188,9 +189,26 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.008268356}
   serializedVersion: 2
-  m_Size: {x: 0.9, y: 0.4}
+  m_Size: {x: 1.3189297, y: 0.68112373}
+--- !u!95 &95000011858195434
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013332931880}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 43ce1eb0c0fd44c89939bbc8a410eb4f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114000010072369898
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -341,6 +359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1df20f7e07233ae43973c821b48af180, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBad: 1
   WeaponObject: {fileID: 1000014266278364, guid: 8de35e5c96c28594284fa9be7f4b5094,
     type: 2}
   InitShootVector: {x: 0, y: -1, z: 0}
@@ -348,6 +367,8 @@ MonoBehaviour:
   FireRate: 4
   AutoFire: 1
   Owner: 2
+  startPosX: 0
+  startPosY: 0
 --- !u!114 &114000014215799870
 MonoBehaviour:
   m_ObjectHideFlags: 1

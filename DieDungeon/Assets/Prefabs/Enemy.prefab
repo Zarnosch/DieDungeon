@@ -108,6 +108,8 @@ GameObject:
   - 114: {fileID: 114000012691509384}
   - 114: {fileID: 114000013099517408}
   - 95: {fileID: 95000011013889740}
+  - 114: {fileID: 114000012057090746}
+  - 114: {fileID: 114000011378180730}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -216,6 +218,38 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114000011378180730
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012268361174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df20f7e07233ae43973c821b48af180, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsBad: 0
+  WeaponObject: {fileID: 1000014266278364, guid: 2e82f741b0642314ba8ed39a37bff606,
+    type: 2}
+  InitShootVector: {x: 0, y: 0, z: 0}
+  WeaponSpeed: 3
+  FireRate: 1
+  AutoFire: 1
+  Owner: 2
+  startPosX: 0
+  startPosY: 0
+--- !u!114 &114000012057090746
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012268361174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 309a99507c02ffa4abca1dac42f3d65c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000012105451962
 MonoBehaviour:
   m_ObjectHideFlags: 1
