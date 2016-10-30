@@ -7,16 +7,29 @@ public class EnemieBehaviour : MonoBehaviour
     public EnemieData Data;
     private HealthBar bar;
 
+	private SpriteRenderer sprite;
+	private Rigidbody2D rb;
+
     public void Awake()
     {
         bar = gameObject.GetComponentInChildren<HealthBar>();
         Data.Start();
+		sprite = GetComponent<SpriteRenderer>();
+		rb = GetComponent<Rigidbody2D>();
     }
 
     public void Start()
     {
         Data.Update(bar);
     }
+
+	void Update() {
+		if (rb.velocity.x > 0) {
+			sprite.flipX = false;
+		} else {
+			sprite.flipX = true;
+		}
+	}
 
     public void OnTriggerEnter2D(Collider2D coll)
     {

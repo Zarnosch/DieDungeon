@@ -16,10 +16,13 @@ public class RangedWeaponSpawnBehaviour : MonoBehaviour {
     public float startPosY;
     public TimeLayer ActiveInTimeLayer { get; private set; }
 
+	private SpriteRenderer sprite;
+
     void Awake()
     {
         ActiveInTimeLayer = GetComponent<ActiveInTimeLayerBehaviour>().ActiveInTimeLayer;
         anim = GetComponent<Animator>();
+		sprite = GetComponent<SpriteRenderer>();
     }
     // Use this for initialization
     void Start ()
@@ -62,7 +65,7 @@ public class RangedWeaponSpawnBehaviour : MonoBehaviour {
         }
         _fireCounter = 0f;
 		GameObject temp;
-		if (left) {
+		if (sprite && sprite.flipX) {
 			temp = Instantiate(WeaponObject, gameObject.transform.position + new Vector3(-startPosX, startPosY, 0), Quaternion.identity) as GameObject;	
 		} else {
 			temp = Instantiate(WeaponObject, gameObject.transform.position + new Vector3(startPosX, startPosY, 0), Quaternion.identity) as GameObject;
