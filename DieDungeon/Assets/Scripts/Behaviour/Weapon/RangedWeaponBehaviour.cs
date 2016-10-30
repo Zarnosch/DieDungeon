@@ -8,10 +8,12 @@ public class RangedWeaponBehaviour : MonoBehaviour {
     public Vector3 MovementDirection;
     public float MovementSpeed;
     public GameObject Explosion;
-    public TimeLayer ActiveInTimeLayer { get; private set; }
+    public TimeLayer ActiveInTimeLayer { get; set; }
+    private ParticleSystem[] _particles;
 
     void Awake()
     {
+        _particles = GetComponentsInChildren<ParticleSystem>();
         ActiveInTimeLayer = GetComponent<ActiveInTimeLayerBehaviour>().ActiveInTimeLayer;
     }
 

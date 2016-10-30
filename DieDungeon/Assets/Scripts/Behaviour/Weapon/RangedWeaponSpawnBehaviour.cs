@@ -10,6 +10,8 @@ public class RangedWeaponSpawnBehaviour : MonoBehaviour {
     public bool AutoFire;
     public Owner Owner;
     private float _fireCounter;
+    public float startPosX;
+    public float startPosY;
     public TimeLayer ActiveInTimeLayer { get; private set; }
 
     void Awake()
@@ -47,9 +49,10 @@ public class RangedWeaponSpawnBehaviour : MonoBehaviour {
     public void Shoot(Vector3 direc, Owner owner)
     {
         _fireCounter = 0f;
-        GameObject temp = Instantiate(WeaponObject, gameObject.transform.position, Quaternion.identity) as GameObject;
+        GameObject temp = Instantiate(WeaponObject, gameObject.transform.position + new Vector3(startPosX, startPosY, 0), Quaternion.identity) as GameObject;
         RangedWeaponBehaviour weaponBehaviour = temp.GetComponent<RangedWeaponBehaviour>();
         weaponBehaviour.GetComponent<OwnedByBehaviour>().Owner = owner;
+        weaponBehaviour.ActiveInTimeLayer = ActiveInTimeLayer;
         weaponBehaviour.MovementDirection = direc;
         weaponBehaviour.MovementSpeed = WeaponSpeed;
 
