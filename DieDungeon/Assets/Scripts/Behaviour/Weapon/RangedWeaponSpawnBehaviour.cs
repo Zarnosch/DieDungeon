@@ -3,6 +3,7 @@ using System.Collections;
 
 public class RangedWeaponSpawnBehaviour : MonoBehaviour {
 
+    private Animator anim;
     public GameObject WeaponObject;
     public Vector3 InitShootVector;
     public float WeaponSpeed;
@@ -17,6 +18,7 @@ public class RangedWeaponSpawnBehaviour : MonoBehaviour {
     void Awake()
     {
         ActiveInTimeLayer = GetComponent<ActiveInTimeLayerBehaviour>().ActiveInTimeLayer;
+        anim = GetComponent<Animator>();
     }
     // Use this for initialization
     void Start ()
@@ -48,6 +50,7 @@ public class RangedWeaponSpawnBehaviour : MonoBehaviour {
 
     public void Shoot(Vector3 direc, Owner owner)
     {
+        anim.SetTrigger("Attack");
         _fireCounter = 0f;
         GameObject temp = Instantiate(WeaponObject, gameObject.transform.position + new Vector3(startPosX, startPosY, 0), Quaternion.identity) as GameObject;
         RangedWeaponBehaviour weaponBehaviour = temp.GetComponent<RangedWeaponBehaviour>();
