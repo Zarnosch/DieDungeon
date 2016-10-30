@@ -37,6 +37,7 @@ GameObject:
   - 4: {fileID: 4000013276314442}
   - 58: {fileID: 58000012718109372}
   - 114: {fileID: 114000014117982796}
+  - 114: {fileID: 114000011449556324}
   m_Layer: 0
   m_Name: InterActionActivator
   m_TagString: InteractionObstacle
@@ -64,7 +65,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012756341698}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.54, y: -10.64, z: 0}
+  m_LocalPosition: {x: 10.470705, y: -10.652574, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -85,6 +86,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1
+--- !u!114 &114000011449556324
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012756341698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 684b2fe5cc457b44c91d2192efc074d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ActiveInTimeLayer: 3
 --- !u!114 &114000014117982796
 MonoBehaviour:
   m_ObjectHideFlags: 1

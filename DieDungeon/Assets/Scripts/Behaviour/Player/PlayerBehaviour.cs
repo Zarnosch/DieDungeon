@@ -39,9 +39,16 @@ public class PlayerBehaviour : MonoBehaviour {
 
     public void OnTriggerEnter2D(Collider2D coll)
     {
+
         RangedWeaponBehaviour weapon = coll.GetComponent<RangedWeaponBehaviour>();
         OwnedByBehaviour owner = coll.gameObject.GetComponent<OwnedByBehaviour>();
-        if (owner != null && weapon != null &&  owner.Owner != Owner.Player)
-            PlayerData.TakeHit(weapon.Data.Damage);
+        if (owner != null && weapon != null && owner.Owner != Owner.Player)
+        {
+            TimeLayer collisionTimeLayer = coll.GetComponent<ActiveInTimeLayerBehaviour>().ActiveInTimeLayer;
+            if (activeLayer.ActiveInTimeLayer == collisionTimeLayer || collisionTimeLayer == TimeLayer.All)
+            {
+                PlayerData.TakeHit(weapon.Data.Damage);
+            }
+        } 
     }
 }

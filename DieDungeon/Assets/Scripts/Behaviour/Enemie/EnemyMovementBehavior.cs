@@ -4,6 +4,7 @@ using System.Collections;
 public class EnemyMovementBehavior : MonoBehaviour {
 
     public float maxVelocity = 0.02f;
+    public bool MayMove = false;
 
     public float accelerationSpeed = 0.015f;
     public float decelerationSpeed = 1.0f;
@@ -18,6 +19,11 @@ public class EnemyMovementBehavior : MonoBehaviour {
 
     private Rigidbody2D rb;
 
+    void Awake()
+    {
+        ActiveTimeLayer = GetComponent<ActiveInTimeLayerBehaviour>().ActiveInTimeLayer;
+    }
+
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody2D>();
@@ -26,9 +32,15 @@ public class EnemyMovementBehavior : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        gameObject.layer = 0;
         if (IngameHandlerBehaviour.Instance.Handler.ActiveTimeLayer != ActiveTimeLayer && ActiveTimeLayer != TimeLayer.All) return;
+        gameObject.layer = 8;
 
-        float move = target.transform.position.x - gameObject.transform.position.x;
+        float move = 0;
+        if (MayMove)
+        {
+           move = target.transform.position.x - gameObject.transform.position.x;
+        }       
 
         if(move != 0)
         {
@@ -46,12 +58,14 @@ public class EnemyMovementBehavior : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D coll)
     {
+        if (IngameHandlerBehaviour.Instance.Handler.ActiveTimeLayer != ActiveTimeLayer && ActiveTimeLayer != TimeLayer.All) return;
         if (coll.gameObject.tag == "Player")
             allowMovement = false;
     }
 
     public void OnCollisionExit2D(Collision2D coll)
     {
+        if (IngameHandlerBehaviour.Instance.Handler.ActiveTimeLayer != ActiveTimeLayer && ActiveTimeLayer != TimeLayer.All) return;
         if (coll.gameObject.tag == "Player")
             allowMovement = true;
     }
