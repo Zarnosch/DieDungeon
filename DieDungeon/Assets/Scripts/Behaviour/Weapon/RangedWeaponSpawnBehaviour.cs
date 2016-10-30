@@ -3,6 +3,7 @@ using System.Collections;
 
 public class RangedWeaponSpawnBehaviour : MonoBehaviour {
 
+    public bool IsBad;
     private Animator anim;
     public GameObject WeaponObject;
     public Vector3 InitShootVector;
@@ -50,7 +51,15 @@ public class RangedWeaponSpawnBehaviour : MonoBehaviour {
 
     public void Shoot(Vector3 direc, Owner owner)
     {
-        anim.SetTrigger("Attack");
+
+        if (!IsBad)
+        {
+            anim.SetTrigger("Attack");
+        }
+        else
+        {
+            Debug.Log("Attack");
+        }
         _fireCounter = 0f;
         GameObject temp = Instantiate(WeaponObject, gameObject.transform.position + new Vector3(startPosX, startPosY, 0), Quaternion.identity) as GameObject;
         RangedWeaponBehaviour weaponBehaviour = temp.GetComponent<RangedWeaponBehaviour>();
