@@ -37,10 +37,6 @@
 				v2f o;
 				o.vertex = mul(UNITY_MATRIX_MVP, v.vertex);
 				o.uv = v.uv;
-				#if UNITY_UV_STARTS_AT_TOP
-					if (_GlobalKeepColored_TexelSize.y < 0)
-					        o.uv.y = 1-o.uv.y;
-				#endif
 				return o;
 			}
 			
@@ -50,6 +46,7 @@
 			fixed4 frag (v2f i) : SV_Target
 			{
 				fixed4 col = tex2D(_MainTex, i.uv);
+				i.uv.y = 1 - i.uv.y;
 				fixed4 playerCol = tex2D(_GlobalKeepColored, i.uv);
 
 				// YCbCr color space, only use grey
