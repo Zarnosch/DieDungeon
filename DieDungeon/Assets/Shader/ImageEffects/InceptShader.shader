@@ -46,7 +46,10 @@
 			fixed4 frag (v2f i) : SV_Target
 			{
 				fixed4 col = tex2D(_MainTex, i.uv);
-				i.uv.y = 1 - i.uv.y;
+
+				#if UNITY_UV_STARTS_AT_TOP
+					i.uv.y = 1 - i.uv.y;
+				#endif
 				fixed4 playerCol = tex2D(_GlobalKeepColored, i.uv);
 
 				// YCbCr color space, only use grey
