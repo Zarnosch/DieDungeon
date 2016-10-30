@@ -37,4 +37,11 @@ public class PlayerBehaviour : MonoBehaviour {
 		}
 	}
 
+    public void OnTriggerEnter2D(Collider2D coll)
+    {
+        RangedWeaponBehaviour weapon = coll.GetComponent<RangedWeaponBehaviour>();
+        Owner owner = coll.gameObject.GetComponent<OwnedByBehaviour>().Owner;
+        if (weapon != null &&  owner != Owner.Player)
+            PlayerData.TakeHit(weapon.Data.Damage);
+    }
 }
