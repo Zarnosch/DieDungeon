@@ -25,11 +25,17 @@ public class InterActionActivator : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        _inRange = true;
+        if(collider.tag == "Player")
+        {
+            _inRange = true;
+        }
     }
 
     void OnTriggerExit2D(Collider2D collider)
     {
-        _inRange = false;
+        if (collider.tag == "Player")
+        {
+            _inRange = false;
+        }
     }
 }

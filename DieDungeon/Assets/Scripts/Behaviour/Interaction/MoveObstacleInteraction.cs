@@ -21,6 +21,7 @@ public class MoveObstacleInteraction : MonoBehaviour {
     void Awake()
     {
         _timer = 0f;
+        _inRange = false;
         _triggered = false;
         RigidbodyOfThisObstacle = GetComponent<Rigidbody2D>();
         _partSystem = GetComponentInChildren<ParticleSystem>();
@@ -46,18 +47,25 @@ public class MoveObstacleInteraction : MonoBehaviour {
         }
         if (_inRange && Input.GetButtonDown("Fire3") && !_triggered)
         {
+            Debug.Log("in");
             Activate();
         }
     }
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        _inRange = true;
+        if (collider.tag == "Player")
+        {
+            _inRange = true;
+        }
     }
 
     void OnTriggerExit2D(Collider2D collider)
     {
-        _inRange = false;
+        if (collider.tag == "Player")
+        {
+            _inRange = false;
+        }
     }
 
     public void Activate()
