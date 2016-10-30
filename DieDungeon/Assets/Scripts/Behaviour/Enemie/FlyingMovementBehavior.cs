@@ -47,7 +47,6 @@ public class FlyingMovementBehavior : MonoBehaviour {
         velocityX = Mathf.Clamp(velocityX, minVelocity, maxVelocity);
 
         float moveY = target.transform.position.y + 5f - gameObject.transform.position.y;
-        Debug.Log("movey" + moveY);
         if (Mathf.Abs(moveY) > 2)
         {
             velocityY += decelerationSpeed * Time.deltaTime;

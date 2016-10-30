@@ -14,15 +14,25 @@ public class HUDManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	    
+	    if(PlayerHandlerBehaviour.Instance.activePlayer.PlayerData.Health != lives)
+        {
+            lives = PlayerHandlerBehaviour.Instance.activePlayer.PlayerData.Health;
+            UpdateLives();
+        }
 	}
 
-    public void TakeLive()
+    public void UpdateLives()
     {
-        if (lives > 0)
+        for (int i = 0; i < hearts.Length; i++)
         {
-            lives--;
-            hearts[lives].color = new Color(20, 20, 20);
+            if(i < lives)
+            {
+                hearts[i].color = new Color(255, 255, 255);
+            }
+            else
+            {
+                hearts[i].color = new Color(0, 0, 0);
+            }
         }
     }
 }
