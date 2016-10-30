@@ -30,18 +30,22 @@
 				float4 vertex : SV_POSITION;
 			};
 
+			sampler _GlobalKeepColored;
+
 			v2f vert (appdata v)
 			{
 				v2f o;
 				o.vertex = mul(UNITY_MATRIX_MVP, v.vertex);
 				o.uv = v.uv;
+				#if UNITY_UV_STARTS_AT_TOP
+					if (_GlobalKeepColored_TexelSize.y < 0)
+					        o.uv.y = 1-o.uv.y;
+				#endif
 				return o;
 			}
 			
 			sampler2D _MainTex;
 			float _Blending;
-
-			sampler _GlobalKeepColored;
 
 			fixed4 frag (v2f i) : SV_Target
 			{
