@@ -47,7 +47,8 @@ public class PlayerBehaviour : MonoBehaviour {
             TimeLayer collisionTimeLayer = coll.GetComponent<ActiveInTimeLayerBehaviour>().ActiveInTimeLayer;
             if (activeLayer.ActiveInTimeLayer == collisionTimeLayer || collisionTimeLayer == TimeLayer.All)
             {
-                PlayerData.TakeHit(weapon.Data.Damage);
+                if (PlayerData.TakeHit(weapon.Data.Damage))
+                    Application.LoadLevel(Application.loadedLevel);
             }
         } 
     }
