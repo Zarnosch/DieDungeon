@@ -159,6 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1df20f7e07233ae43973c821b48af180, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsBad: 0
   WeaponObject: {fileID: 1000014266278364, guid: b3e152878256bcc48960bf704a1596ab,
     type: 2}
   InitShootVector: {x: 0, y: 0, z: 0}
@@ -179,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fac4a50a6029d4134a9fca2ea6d42305, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 600
+  jumpForce: 800
 --- !u!114 &114000012614145838
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -65,10 +65,6 @@ public class RangedWeaponSpawnBehaviour : MonoBehaviour {
         {
             anim.SetTrigger("Attack");
         }
-        else
-        {
-            Debug.Log("Attack");
-        }
         _fireCounter = 0f;
 		GameObject temp;
 		if (sprite && sprite.flipX) {

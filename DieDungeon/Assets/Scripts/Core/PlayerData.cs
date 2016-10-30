@@ -41,7 +41,6 @@ public class PlayerData {
 
     public bool TakeHit(int damage)
     {
-        Debug.Log("Taking one for the team" + health);
         if (damage > 0 && health > 0)
             health--;
         return health == 0;
