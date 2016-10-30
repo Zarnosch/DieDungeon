@@ -25,6 +25,10 @@ public class EnemieBehaviour : MonoBehaviour
             if (!Data.TakeDamage(coll.gameObject.GetComponent<RangedWeaponBehaviour>().Data.Damage, bar))
                 KillMySelf();
         }
+        if (coll.tag == "InteractionObstacle" && coll.GetComponent<Rigidbody2D>().velocity.y < -0.1 && (IngameHandlerBehaviour.Instance.Handler.ActiveTimeLayer == TimeLayer.Second || IngameHandlerBehaviour.Instance.Handler.ActiveTimeLayer == TimeLayer.Third))
+        {
+            KillMySelf();
+        }
     }
 
     public void KillMySelf()

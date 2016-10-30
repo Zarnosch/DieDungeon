@@ -39,10 +39,11 @@ public class PlayerData {
 		activeOnTimeLayer = activeOnLayer;
 	}
 
-    public void TakeHit(int damage)
+    public bool TakeHit(int damage)
     {
         Debug.Log("Taking one for the team" + health);
         if (damage > 0 && health > 0)
             health--;
+        return health == 0;
     }
 }

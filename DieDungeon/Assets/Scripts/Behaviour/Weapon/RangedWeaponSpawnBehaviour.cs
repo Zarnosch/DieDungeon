@@ -50,6 +50,7 @@ public class RangedWeaponSpawnBehaviour : MonoBehaviour {
         GameObject temp = Instantiate(WeaponObject, gameObject.transform.position, Quaternion.identity) as GameObject;
         RangedWeaponBehaviour weaponBehaviour = temp.GetComponent<RangedWeaponBehaviour>();
         weaponBehaviour.GetComponent<OwnedByBehaviour>().Owner = owner;
+        weaponBehaviour.ActiveInTimeLayer = ActiveInTimeLayer;
         weaponBehaviour.MovementDirection = direc;
         weaponBehaviour.MovementSpeed = WeaponSpeed;
 

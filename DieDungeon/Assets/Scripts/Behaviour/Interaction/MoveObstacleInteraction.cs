@@ -52,7 +52,7 @@ public class MoveObstacleInteraction : MonoBehaviour {
         {
             Activate();
         }
-        if (_inRange && Input.GetButtonDown("Fire3") && !_triggered)
+        if (_inRange && Input.GetButtonDown("Fire3") && !_triggered && IngameHandlerBehaviour.Instance.Handler.ActiveTimeLayer != TimeLayer.First)
         {
             Activate();
         }
