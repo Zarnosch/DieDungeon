@@ -124,7 +124,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012268361174}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 95.97, y: -16.41, z: 0}
+  m_LocalPosition: {x: 75.56, y: -20.56, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -233,8 +233,8 @@ MonoBehaviour:
   WeaponObject: {fileID: 1000014266278364, guid: 2e82f741b0642314ba8ed39a37bff606,
     type: 2}
   InitShootVector: {x: 0, y: 0, z: 0}
-  WeaponSpeed: 3
-  FireRate: 2
+  WeaponSpeed: 2.5
+  FireRate: 4
   AutoFire: 1
   Owner: 2
   startPosX: 0
