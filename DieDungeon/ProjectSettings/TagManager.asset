@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - InteractionObstacle
   - Box
+  - KillCollider
   layers:
   - Default
   - TransparentFX

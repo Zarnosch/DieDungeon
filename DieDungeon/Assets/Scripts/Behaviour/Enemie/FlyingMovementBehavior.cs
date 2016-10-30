@@ -45,7 +45,7 @@ public class FlyingMovementBehavior : MonoBehaviour {
         Renderer.gameObject.layer = 8;
 
         float moveX = target.transform.position.x - gameObject.transform.position.x;
-
+        
         if (moveX != 0)
         {
             velocityX += accelerationSpeed * Time.deltaTime;
@@ -70,7 +70,7 @@ public class FlyingMovementBehavior : MonoBehaviour {
         flightHelper += .005f + Mathf.Abs(Random.value) * 0.05f;
         
         if (allowMovement)
-            rb.velocity = new Vector2(velocityX * moveX, Mathf.Sin(flightHelper)*Time.deltaTime * 100f + (velocityY * moveY * 0.5f));
+            rb.velocity = new Vector2(velocityX * ((moveX>0)?1:-1), Mathf.Sin(flightHelper)*Time.deltaTime * 100f + (velocityY * moveY * 0.5f));
     }
 
     void OnCollisionEnter2D(Collision2D coll)

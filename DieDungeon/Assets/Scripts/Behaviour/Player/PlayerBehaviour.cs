@@ -58,6 +58,10 @@ public class PlayerBehaviour : MonoBehaviour {
                 if (PlayerData.TakeHit(weapon.Data.Damage))
                     Application.LoadLevel(Application.loadedLevel);
             }
-        } 
+        }
+        if (coll.tag == "KillCollider")
+        {
+            Application.LoadLevel(Application.loadedLevel);
+        }
     }
 }
