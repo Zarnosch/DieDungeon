@@ -1,0 +1,4 @@
+idle 1-2
+attack 3-8
+block 9-10
+run 11-16
