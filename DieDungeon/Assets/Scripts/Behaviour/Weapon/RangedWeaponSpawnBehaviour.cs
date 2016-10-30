@@ -11,6 +11,9 @@ public class RangedWeaponSpawnBehaviour : MonoBehaviour {
     public float FireRate;
     public bool AutoFire;
     public Owner Owner;
+
+	public float ShootRange = 7.0f;
+
     private float _fireCounter;
     public float startPosX;
     public float startPosY;
@@ -39,9 +42,12 @@ public class RangedWeaponSpawnBehaviour : MonoBehaviour {
         {
             _fireCounter = FireRate;
         }
-        if (AutoFire && _fireCounter >= FireRate && Owner == Owner.Enemie)
+		if (AutoFire && _fireCounter >= FireRate && Owner == Owner.Enemie)
         {
-            Shoot(PlayerHandlerBehaviour.Instance.activePlayer.transform.position - transform.position, Owner.Enemie);
+			if ((PlayerHandlerBehaviour.Instance.activePlayer.transform.position - transform.position).magnitude < ShootRange) {
+				Shoot(PlayerHandlerBehaviour.Instance.activePlayer.transform.position - transform.position, Owner.Enemie);
+			}
+            	
         }
         else if (Input.GetButtonDown("Fire2") && _fireCounter >= FireRate && Owner == Owner.Player)
         {
