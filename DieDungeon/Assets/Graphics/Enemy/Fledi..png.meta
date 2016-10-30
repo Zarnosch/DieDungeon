@@ -1,9 +1,18 @@
 fileFormatVersion: 2
 guid: 814d4c4775a9f47e5a25900b9f644eb5
-timeCreated: 1477822641
+timeCreated: 1477826184
 licenseType: Pro
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Fledi._0
+    21300002: Fledi._1
+    21300004: Fledi._2
+    21300006: Fledi._3
+    21300008: Fledi._4
+    21300010: Fledi._5
+    21300012: Fledi._6
+    21300014: Fledi._7
+    21300016: Fledi._8
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -29,8 +38,8 @@ TextureImporter:
   textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
-    aniso: -1
+    filterMode: 0
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -38,20 +47,137 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 30
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Fledi._0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 34
+        width: 26
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Fledi._1
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 35
+        width: 26
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Fledi._2
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 34
+        width: 28
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Fledi._3
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 35
+        width: 26
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Fledi._4
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 35
+        width: 26
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Fledi._5
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 34
+        width: 26
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Fledi._6
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 33
+        width: 25
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Fledi._7
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 32
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Fledi._8
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 33
+        width: 25
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 
